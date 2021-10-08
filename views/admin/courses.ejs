@@ -1,0 +1,125 @@
+<head>
+    <a href="/"><img  src="../../public/img/dgimaa.jpg" alt="Logo" width="90" height="80"></a>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Elsa, a multipurpose Template from Andreas Lautenschlager">
+      <meta name="author" content="Andreas Lautenschlager - www.lautenschlager.de">
+      
+      <title>DGIMA</title>
+      
+      <!-- normalize core CSS -->
+      <link href="../../public/css/normalize.css" rel="stylesheet">
+      
+      <!-- Bootstrap core CSS -->
+      <link href="../../public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="../../public/bootstrap/css/carousel.css" rel="stylesheet">
+      <link href="../../public/bootstrap/fonts/glyphicons-halflings-regular.eot" rel="stylesheet">
+      
+      <!-- Load jQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+      <link href="../../public/bootstrap/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+      
+      <script src="../../public/bootstrap/js/ie-emulation-modes-warning.js"></script>
+      
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      
+      
+      <!-- Google Fonts - Change if needed -->
+      <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400italic,400,700,300,600' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css'>
+      
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+      
+      <!-- Menu shrinking -->
+      <script type="text/javascript" src="../../public/js/menu.js"></script>
+      
+      <!-- Main styles of this template -->
+      <link href="../../public/css/style.min.css?v=1.0.0" rel="stylesheet">
+      
+      <!-- Custom CSS. Input here your changes -->
+      <link href="../../public/css/custom.css" rel="stylesheet">
+      
+     
+      
+      
+      <style>
+      
+      #coloor {
+         
+          color:#ff4500;
+        }
+            
+          
+              </style>
+              <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    </head>
+    <body>
+        <div class="col-md-12" id ="coloor">
+            <ul class="breadcrumb"id ="coloor">
+                <li><a href="../" id ="coloor">Home</a></li>
+                <li><a href="/dashboard" role="button" id="coloor">Dashboard</a></li>
+                <li> <a  href="/admin/courses/add-course" role="button" id="coloor">Ajouter une matiere</a>
+                </li>
+                </ul>
+
+<div class="col-sm-4">
+</div>
+<br>
+<br>
+<div class="col-sm-4">
+    </div>
+<table class="table table-striped sorting">
+
+    <thead>
+        <tr class="home">
+            <th>Course</th>
+            <th>Teacher</th>
+            <th>Module</th>
+            <th>Course Image</th>
+
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% courses.forEach(function(course){ %>
+            <tr>
+            <td><%= course.title %></td>
+            <td><%= course.teacher %></td>
+            <td><%= course.module %></td>
+            <td>
+                <% if (course.image == ""){ %>
+                    <img id="noimages" src="../../public/images/noimage.png"height="150" width="150">
+                    <% } else {%>
+                    <img id="noimages" src="../../public/course_image/<%=course._id %>/<%= course.image %>" height="150" width="150">
+                    <% } %>
+                </td>
+        
+            <td><a href="/admin/courses/edit-course/<%= course._id %>" class="btn btn-warning glyphicon glyphicon-pencil ">Edit</a></td>
+            <% if (course.slug == "home") { %>
+            <td></td>
+            <% }  else {%>
+            <td><a class="confirmDeletion btn btn-danger  fa fa-trash " href="/admin/courses/delete-course/<%= course._id %>">Delete</a></td>
+            <% }%>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+
+<%- include('../_layouts/adminfooter') %>

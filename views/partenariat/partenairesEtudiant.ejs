@@ -1,0 +1,51 @@
+<%- include('../partials/navheader')-%>
+
+<br/>
+<br/>
+<br/>
+
+
+<div class="container">
+
+    <h5>Liste des partenaires</h5>
+<table class="table table-striped">
+    <thead>
+    <tr>
+
+    </tr>
+        <th>Nom du partenaire économique</th><th>L'objet de l'accord</th><th>Type d'accord</th>
+        <th>Date de signature de l'accord</th><th>La durée de l'accord</th><th>
+    </thead>
+    <tbody>
+    <%for(var i=0;i< list.length;i++){%>
+        <tr>
+            <td><%=list[i].nomPartenaire%></td>
+            <td><%=list[i].objetAccord%></td>
+            <td><%=list[i].typeAaccord%></td>
+            <td><%=list[i].dateSignature%></td>
+            <td><%=list[i].dureAccord%>  ans</td>
+
+        </tr>
+    <%}%>
+    </tbody>
+</table>
+
+
+</div>
+
+
+
+
+
+
+<!-- Scripts -->
+
+<!-- Loads Bootstrap Main JS -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../../bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+
+</html>

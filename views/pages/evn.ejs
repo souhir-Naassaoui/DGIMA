@@ -1,0 +1,128 @@
+<%- include('../partials/head')-%>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a href="/"><img  src="../../public/img/dgimaa.jpg" alt="Logo" width="90" height="80"></a>
+            
+        </div>
+        
+        <nav class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right">
+            
+                  <li><a href="/">Acceuil</a></li>
+                  <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">DGIMA<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header"></li>
+                        <li><a href="/etudiant/apropos">A propos</a></li>
+                        <li><a href="/event">Evenements</a></li>
+
+                        <li><a href="/etudiant/affichepresse">Presse</a></li>
+                        <li><a href="/etudiant/affichecertif">Certificats</a></li>
+                    </ul>
+                </li>
+
+
+
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Formation<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header"></li>
+                        <li><a href="index.html">Formation ingénieur </a></li>
+
+                        <li><a href="">Masters</a></li>
+                        <li><a href="">Doctorats</a></li>
+                        <li><a href="index.html">Stages</a></li>
+                        <li><a href="index-header-hero.html">Meilleurs Projets</a></li>
+                        <li><a href="index-header-product.html">Lauréats</a></li>
+                      
+                    </ul>
+                </li>
+
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Recherche<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header"></li>
+                        <li><a href="/recherche/laboratoires">Laboratoires</a></li>
+                        <li><a href="/recherche/master">Masters</a></li>
+                        <li><a href="/recherche/ecoleDoctorale">Doctorat</a></li>
+                     </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Entreprises<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header"></li>
+                        <li><a href="full-width.html">Visites Techniques</a></li>
+
+                        <li><a href="/stage/listEtudiant">Stages et PFE/PFA</a></li>
+                        <li><a href="/recrutement/listEtudiant">Listes des Offres d'Emplois</a></li>
+                        <li><a href="/partners/partenaires2">Partenariat</a></li>
+                        <li class="dropdown-header">International</li>
+                        <li><a href="/infos/politique_international">Politique à L'international</a></li>
+                        <li><a href="/infos/mobiliteEtudiant">Partenariat International</a></li>
+
+                        <li><a href="blog-left-sidebar.html">Etudiants Internationaux</a></li>                        </ul>
+                </li>
+             
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Connexion<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header"></li>
+                        <li><a href="../users/login">Se Connecter</a></li>
+
+                        <li><a href="../users/contact">Contact</a></li>
+                    </ul>
+                </li>
+               
+
+            </ul>
+        </nav>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</div>
+<body>  
+    <section class="page-section padding-60">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h2 class="title-section"><span class="title-regular">Evenements</span><br/>
+                    <hr class="title-underline-center" />
+                </div>
+            </div>
+        </div>
+        <div class="container team-member">
+            <div class="row">
+                <% for (var i = 0; i < ev.length; i++) { %>
+
+                <div class="col-md-4">
+                    
+                    <% if(ev[i].image == ""){ %>
+
+                        <a href="event/affiche/<%= ev[i].nom %>"><img src="../../public/images/noimage.png" class="img-responsive" alt="" width="300" height="400"></a>
+                    <% } else { %>
+                        <a href="event/affiche/<%= ev[i].nom %>"><img src="../../public/upload/<%= ev[i]._id %>/<%= ev[i].image %>" class="img-responsive" alt="" width="300" height="400"></a>
+                    <% } %> 
+                   
+                    <h2><a href="event/affiche/<%= ev[i].nom %>"><%= ev[i].nom %></a></h2>
+                    <h3>Position</h3>
+                    <p class="pp">
+                        <%= ev[i].description %>    </p>
+                    <a href="#" class="social-icon" title="Facebook" target="_blank"><i class="fa fa-facebook brd-size-30"></i></a>
+                    <a href="#" class="social-icon" title="Google-plus" target="_blank"><i class="fa fa-google-plus brd-size-30"></i></a>
+                    <a href="#" class="social-icon" title="Twitter" target="_blank"><i class="fa fa-twitter brd-size-30"></i></a>
+                </div>
+                <% }; %>
+                </div>
+                </div>
+                </section>
+    </body>
+    <%- include('../partials/footer')-%>

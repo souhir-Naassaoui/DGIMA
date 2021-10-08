@@ -1,0 +1,87 @@
+<%- include('../partials/navheader')-%>
+
+<br/>
+<br/>
+<br/>
+
+<div class="container">
+
+    <h5>Offres de stages</h5>
+    <form action="/recrutement/searchEtudiant" method="get">
+        <input type="text" name="kw" style="border-radius: 5px"><span style="color: white">hhhh</span><button class="btn" style="background-color: orangered" type="submit">Chercher</button>
+
+    </form>
+    <div>
+        <%if(list.length>0){%>
+        <%for(var i=0;i< list.length;i++){%>
+        <div style="border: 2px solid black;height: 120px;margin-top: 20px">
+            <%=i+1%>
+            <div class="row"><div class="col-md-2" style="">
+
+                </div>
+                <div class="col-md-8">
+                    <h3 class="text-danger"><%=list[i].titreOffre%> </h3>
+                    <h4><span><i class="fa fa-building" aria-hidden="true"></i> <%=list[i].entreprise%> </span>
+                        <span style="color: white">hhhhhhhh</span>
+                        <span><i class="fa fa-map-marker" aria-hidden="true"></i> <%=list[i].adresse%></span>
+                    </h4>
+                </div>
+                <div class="col-md-2">
+                    <div>
+                        <p><%=new Date(list[i].publication).getDate()+"/"+(new Date(list[i].publication).getMonth()+1)+"/"+new Date(list[i].publication).getFullYear()%></p>
+                        <a href="/recrutement/description/<%=list[i]._id%>" class="btn">Voir plus</a>
+                    </div>
+                </div></div>
+        </div>
+        <%}%>
+        <br>
+        <div class="text-center">
+            <% if (pages > 0) { %>
+                <ul class="pagination">
+                    <% if (current == 1) { %>
+                        <li class="page-item disabled"><a class="page-link">First</a></li>
+                    <% } else { %>
+                        <li><a class="page-link" href="/recrutement/searchEtudiant?page=1">First</a></li>
+                    <% } %>
+                    <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+                    <% if (i !== 1) { %>
+                        <li class="page-item disabled"><a>...</a></li>
+                    <% } %>
+                    <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+                        <% if (i == current) { %>
+                            <li class="page-item active"><a class="page-link"><%= i %></a></li>
+                        <% } else { %>
+                            <li><a class="page-link" href="/recrutement/searchEtudiant?page=<%= i %>"><%= i %></a></li>
+                        <% } %>
+                        <% if (i == Number(current) + 4 && i < pages) { %>
+                            <li class="page-item disabled"><a class="page-link">...</a></li>
+                        <% } %>
+                    <% } %>
+                    <% if (current == pages) { %>
+                        <li class="page-item disabled"><a class="page-link">Last</a></li>
+                    <% } else { %>
+                        <li><a class="page-link" href="/recrutement/searchEtudiant?page=<%= pages %>">Last</a></li>
+                    <% } %>
+                </ul>
+            <% } %>
+        </div>
+        <%}%>
+    </div>
+</div>
+</div>
+
+
+
+
+
+<!-- Scripts -->
+
+<!-- Loads Bootstrap Main JS -->
+<script src="../../public/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../../public/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+
+</html>

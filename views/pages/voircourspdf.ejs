@@ -1,0 +1,35 @@
+
+<head>
+
+    <style>
+      
+        #coloor {
+           
+            color:#ff4500;
+          }
+              
+            
+                </style>
+</head>
+<body>
+    <div class="col-md-12">
+                
+        <ul class="breadcrumb" id="coloor">
+           
+            <li><a href="../" id="coloor" >Acceuil <b class="caret"></b>  </a></li>
+            <li><a href="/dashboard" role="button"id="coloor">Dashboard</a></li>
+            </ul>
+<div class="row margin-bottom-30">
+    <center><h1 id="coloor">LES cours pdf</h1></center>
+<h1><%= title %></h1>
+    <% galleryImages.forEach(function(image){ %>
+
+    <div class="col-sm-3">
+      
+<embed src="../../../../../public/course_image/<%= id %>/gallery/<%= image %>" width=300 height=300 type='application/pdf' />
+<br>
+
+</div>
+
+<% }); %></div>
+</div>

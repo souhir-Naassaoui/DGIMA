@@ -1,0 +1,51 @@
+<%- include('../partials/navheader')-%>
+
+
+<br/>
+<br/>
+<br/>
+
+
+<div class="container">
+    <h5>Liste des écoles</h5>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+
+        </tr>
+        <th>PAYS DONT RELEVE L'INSTITUTION PARTENAIRE</th><th>INSTITUTION PARTENAIRE</th><th>Date de signature de l'accord</th>
+        <th>La durée de l'accord</th>
+        </thead>
+        <tbody>
+        <%for(var i=0;i< list.length;i++){%>
+        <tr>
+            <td><%=list[i].pays%></td>
+            <td><%=list[i].institution%></td>
+            <td><%=new Date(list[i].dateSignature).getDate()+"/"+(new Date(list[i].dateSignature).getMonth()+1)+"/"+new Date(list[i].dateSignature).getFullYear()%></td>
+
+            <td><%=list[i].dureeValidite%>  ans</td>
+
+        </tr>
+        <%}%>
+        </tbody>
+    </table>
+
+
+</div>
+
+
+
+
+
+
+<!-- Scripts -->
+
+<!-- Loads Bootstrap Main JS -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../../bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+
+</html>

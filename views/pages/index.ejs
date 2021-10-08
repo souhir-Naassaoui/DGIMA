@@ -1,0 +1,680 @@
+
+<%- include('../partials/head')-%>
+
+<script src="public/js/google-map.js"></script>
+<head>
+    <style>
+        #double{
+            color: brown;
+        }
+    </style> 
+</head>
+
+<body>
+<%- include('../partials/nav')-%>
+
+    <!-- Call to Action -->
+    <div class="sec-alternative" style="background-image: url(img/odd_background.png)">
+    </div>
+    <section class="page-section ">
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="title-section">A LA UNE</h2>
+                    <hr class="title-underline" />
+                </div>
+                <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+                <% for (var i = 0; i < evn.length; i++) { %>
+                <div class="col-md-4 ">
+                    <div class="col-xs-2 box-icon">
+                        <div class="fas fa-check-circle style='font-size:48px';color:green'"></div>
+                    </div>
+                    <div class="col-xs-10">
+                        <h4><%= evn[i].nom %></h4>
+                        <h5>Ecouter Nos nouvelles</h5>
+                    </div>
+                    
+                </div>
+                <% };%> 
+                <% for (var i = 0; i < per.length; i++) { %>
+                <div class="col-md-4 ">
+                    <div class="col-xs-2 box-icon">
+                        <div class="fas fa-check-circle style='font-size:48px';color:green"></div>
+                    </div>
+                    <div class="col-xs-10">
+                        <h4><%= per[i].titre %></h4>
+                        <h5>Ecouter nos nouvelles</h5>
+                    </div>
+                    <div class="col-md-12">
+                        <p>
+                        </p>
+                    </div>
+                </div>
+                <% };%> 
+
+            </div>
+            <!--
+            <div class="row">
+                <div class="col-md-4 ">
+                    <div class="col-xs-2 box-icon">
+                        <div class="fa fa-camera"></div>
+                    </div>
+                    <div class="col-xs-10">
+                        <h4>PHOTOGRAPHY</h4>
+                        <h5>Lorem Ipsum Dolor</h5>
+                    </div>
+                    <div class="col-md-12">
+                        <p>
+                            Maecenas luctus nisi in sem fermentum blat. In nec elit solliudin, elementum, dictum pur quam volutpat suscipit antena.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="col-xs-2 box-icon">
+                        <div class="fa fa-pencil"></div>
+                    </div>
+                    <div class="col-xs-10">
+                        <h4>GRAPHICS</h4>
+                        <h5>Lorem Ipsum Dolor</h5>
+                    </div>
+                    <div class="col-xs-12">
+                        <p>
+                            Maecenas luctus nisi in sem fermentum blat. In nec elit solliudin, elementum, dictum pur quam volutpat suscipit antena.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="col-xs-2 box-icon">
+                        <div class="fa fa-bullseye"></div>
+                    </div>
+                    <div class="col-xs-10">
+                        <h4>BRANDING</h4>
+                        <h5>Lorem Ipsum Dolor</h5>
+                    </div>
+                    <div class="col-md-12">
+                        <p>
+                            Maecenas luctus nisi in sem fermentum blat. In nec elit solliudin, elementum, dictum pur quam volutpat suscipit antena.
+                        </p>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </section>
+
+    <!-- Chiffres -->
+    <section class="page-section" id="intro">
+        <div class="container intro">
+            <div class="row margin-bottom-50">
+                <div class="col-md-12 text-center">
+                    <h1 class="title-section">L'ENIS en chiffres</h1>
+                    <hr class="title-underline-center">
+                    <p class="lead">,<span>L'Ecole Nationale d'Ingénieurs de Sfax </span>(arabe : المدرسة الوطنية للمهندسين بصفاقس) ou ENIS est une école d'ingénieurs tunisienne rattachée à l'Université de Sfax.
+
+                        Créée en 1983, par une loi de transformation de la faculté des sciences et techniques de Sfax (créée en 1975), l'ENIS joue un rôle majeur dans le développement d'un pôle scientifique
+                        <br/></p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div>
+                    <% for (var i = 0; i < chiffre.length; i++) { %>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div>
+                            <i class="fa fa-user"></i>
+                            <label><strong>    <%= chiffre[i].nombre %> </strong>
+                                <br/>    <%= chiffre[i].titre %> </label>
+                        </div>
+                    </div>                   
+                    <% }; %>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Press -->
+    <section class="page-section ">
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-8 col-md-push-5">
+                    <div class="col-md-12">
+                        <h2 class="title-section">ENIS dans la presse</h2>
+                        <hr class="title-underline" />
+                    </div>
+                    <div class="row">
+                        <% for (var i = 0; i < pr.length; i++) { %>
+
+                        <div class="col-md-6">
+                            <div class="col-xs-2 box-icon">
+                                <div class="fa fa-html5 "></div>
+                            </div>
+                            <div class="col-xs-10">
+                                <h4><a href="etudiant/affichepresse"><%= pr[i].titre %></a></h4>
+                            </div>
+                            <div class="col-md-10 col-xs-offset-2">
+                                <p>
+                                <%= pr[i].date %> </p>
+                            </div>
+                        </div>
+                        <% }; %>
+
+                        
+                    </div>
+                </div>
+            
+                <div class="col-md-4 col-md-pull-8" >
+                    <img class="img-responsive" src="../../public/img/presse.jpg" alt="" height="700px" width="200px" />
+                </div>
+
+            </div>
+            </div>
+       
+    </section>
+    <!-- Certif -->
+    
+    <section class="page-section section-grey">
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="title-section">CERTIFICATIONS</h2>
+                    <hr class="title-underline " />
+                    <div class="row">
+                        <% for (var i = 0; i < cer.length; i++) { %>
+
+                        <div class="col-sm-3">
+                            <div class="feature-box">
+                                <div class="feature-box-icon">
+                                    <i class="fa fa-code"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4><a href="etudiant/affichecertif"><%= cer[i].titre %></a></h4>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <% }; %>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Evenements -->
+    <section class="page-section-no-padding">
+        <!-- /3 Column Portfolio -->
+        <div class="filter-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                        <h1>EVENEMENTS</h1>
+                        <div class="filter-container isotopeFilters">
+                            <ul class="list-inline filter">
+                                <li class="active"><a href="#" data-filter="*">All </a><span>/</span></li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-section port-col">
+
+                <div class="row">
+                    <div class="isotopeContainer">
+                        <% for (var i = 0; i < evp.length; i++) { %>
+        
+                        <div class="col-md-4 isotopeSelector photography">
+                            <article class="">
+                                <figure>
+ 
+                                    <% if(evp[i].image == ""){ %>
+
+                                        <a href="event/affiche/<%= evp[i].nom %>"><img src="../../public/images/noimage.png" class="img-responsive" alt="" width="300" height="400"></a>
+                                    <% } else { %>
+                                        <a href="event/affiche/<%= evp[i].nom %>"><img src="../../public/upload/<%= evp[i]._id %>/<%= evp[i].image %>" class="img-responsive" alt="" width="300" height="400"></a>
+                                    <% } %>                                    <div class="overlay-background">
+                                        <div class="inner"></div>
+                                    </div>
+                                    <div class="overlay">
+                                        <div class="inner-overlay">
+                                            <div class="row margin-0 project-content">
+                                                <div class="col-md-12 info-head">
+                                                    <h4><a href="event/affiche/<%= evp[i].nom %>"><%= evp[i].nom %></a></h4>                                                   
+                                                </div>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </figure>
+                            </article>
+                        </div>
+                        <% }; %>
+        
+                    </div>
+                </div>
+            </div>
+            </section>
+              
+ 
+        <!-- END Columns Portfolio -->
+
+    </section>
+
+
+    <!-- Our Clients -->
+    <section class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-push-8">
+                    <h2 class="title-section">PARTENAIRES</h2>
+                    <hr class="title-underline" />
+                    <p> Enis a signé recemment une nouvelle convention de Partenariat avec l'Institut Français de Tunis (IFT)
+                        aussi un autre accord de partenariat entre elle et l'Ecole superieure de l'éléctronique et de ses applications en france
+                        
+                        
+                    </p>
+                </div>
+                <div class="col-md-8 col-md-pull-4 text-center">
+                    <div class="row">
+                        <div class="col-md-6 col-md-push-1 padding-0">
+                            <img src="../../public/img/partenaire.jpg" alt="" class=" img-responsive"/>
+
+                        </div>
+                      
+                        
+                       
+                    </div>
+                    <br>
+                    <div class="col-md-10">
+                        <img src="https://enis.blob.core.windows.net/enis/part2.jpg" alt="" class="img-thumbnail"  width:50%/>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ALTERNATIVE SECTION -->
+    <!-- insert "sec-alternative" class into section tag -->
+
+    <section class="page-section sec-alternative" style="background-image: url(img/odd_background.png)">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="title-section"><span class="title-regular">Plus D'informations</span></h2>
+                    <a href="/etudiant/apropos" class="btn btn-md btn-primary" target="_blank">About us </a></p>
+                    <hr class="title-underline" />
+                </div>
+                <div class="col-md-4 ">
+                    <div class="col-xs-2 box-icon">
+                       <!-- <div class="fa fa-desktop"></div> -->
+                    </div>
+                   
+                        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                        <i class="material-icons" size : 10px>
+                      ADRESSE : Route de la Soukra km 4 - 3038 
+                     </i>
+
+                       
+                    
+                </div>
+                <div class="col-md-4 ">
+                    <div class="col-xs-2 box-icon">
+                        
+                    </div>
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                    <span class="glyphicon glyphicon-earphone">TÉL : +216 70 258 520 </p> </span>
+               
+                    </div>
+                </div>
+            </div>
+
+            
+                  
+                </div>
+                <div class="col-md-4 ">
+                    <div class="col-xs-2 box-icon">
+                        <div class="fa fa-pencil"></div>
+                    </div>
+                    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+                   
+                   
+                </div>
+                <div class="col-md-4 ">
+                    <div class="col-xs-2 box-icon">
+                        <div class="fa fa-bullseye"></div>
+                    </div>
+                    <div class="col-xs-10">
+                        <h4></h4>
+                        <h5> Adresse : Route de la Soukra km 4 - 3038 </h5>
+                    </div>
+                    <div class="col-md-12">
+                       
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Our Team-->
+    <section class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="title-section"><span class="title-regular">ENIS</span></h2>
+                    <hr class="title-underline" />
+                </div>
+                <div class="col-md-12">
+                    <img src="../../public/img/enis.jpg" alt="" class=" img-responsive"/>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Left Spotlight-->
+    <section class="page-section section-grey">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5  spotlight-container">
+                    <h2 class="title-section"><span class="title-regular">VISITE DE MONSIEUR L'AMBASSADEUR DE L'ALLEMAGNE À L'ENIS LE 25 FÉVRIER 2020</span></h2>
+                    <hr class="title-underline" />
+                    <p>
+
+                        </p>
+                </div>
+                <div class="col-md-6 col-md-push-1 padding-0">
+                    <img class=" img-responsive" src="../../public/img/enis1.jpg" alt="" />
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- RIGHT SPOTLIGHT-->
+    <section class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-push-7 spotlight-container">
+                    <h2 class="title-section"><span class="title-regular" id="double">DOUBLE DIPLÔMATION
+                    </span></h2>
+                    <hr class="title-underline" />
+                    <p>
+                        Par la globalisation du marché du travail le développement des compétences personnelles prend une place de plus en plus importante dans la formation du futur ingénieur. Ces compétences intègrent, entre autre, une dimension d’ouverture qu’il faut développer en renforçant ses capacités d’adaptation et d’intégration pour être rapidement opérationnel dans l’exercice de son métier.
+
+La mobilité à l’international est une expérience enrichissante de la personnalité et reste le meilleur vecteur d’ouverture qui consolide la formation du futur ingénieur.
+
+L’ENIS s’est toujours engagée à encourager et faciliter, dans la limite des moyens législatifs et matériels dont elle dispose, toute action de mobilité à l’international de ses élèves ingénieurs.
+
+Actuellement à l’ENIS, la mobilité à l’international se fait essentiellement par des accords d’échanges spécifiques entre institutions partenaires ou bien dans le cadre d’accords internationaux entre pays partenaires.
+
+Deux types de mobilité sont pris en charge :
+<ul>
+<li>L’échange dans le cadre d’accords de « double diplômation » qui consiste à partager ses études d’ingénieurs entre l’ENIS et l’institution partenaire pour obtenir les diplômes de ces deux institutions.</li>
+<li>L’échange dans le cadre du projet européen « ERASMUS » qui consiste à valider une étape de sa formation à l’ENIS par le suivi d’une autre, jugée équivalente, dans un établissement partenaire du projet. 
+</li>
+</ul>
+                        </p>
+                </div>
+                <div class="col-md-6  col-md-pull-5 padding-0">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <img src="../../public/img/double.jpg" alt=""class="double" width="600" height="500"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- VIDEO -->
+    <div class="page-section-no-padding  video-container" style="background-image: url(http://placehold.it/1920x1080); background-size: cover;">
+        <div class="video-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        Ecole Nationale d'Ingénieurs de Sfax-Tunisie
+                        <a class="image" href="https://www.youtube.com/watch?v=MBxqctQi2Dg"><i class=" fa fa-play-circle-o"></i></a> WE WORK
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- BLOG/LATEST NEWS-->
+    <section class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                   <center> <h2  id="double"  class="title-section">LATEST NEWS</h2></center>
+                   <br>
+                   <br>
+                   
+                </div>
+            </div>
+            <div class="row blog-listing">
+                <div class="col-md-4">
+                    <article>
+                        <img class="img-thumbnail" src="../../public/img/rank.jpg"" alt="" />
+
+                        <h2>Global Ranking of Academic Subjects</h2>
+                        <hr class="title-underline">
+                        <p>
+                            Excellentes performances:
+                                D’après le « Global Ranking of Academic Subjects » (by Shanghai Ranking) de 2021, l’Université de Sfax à travers l’Ecole Nationale d’Ingénieurs de Sfax (ENIS) a été classée dans les disciplines suivantes : Food Science & Technology (Top 150), Metallurgical Engineering (Top 200) et Mechanical Engineering (Top 400).
+                                Bravo à tous les chercheurs travaillant dans les différentes structures de recherche de l'ENIS.
+
+                        </p>
+                        <div class="post-meta">
+                            <span><i class="fa fa-calendar"></i> Mai, 2021</span>
+                            <span><i class="fa fa-tag"></i> <a href="#">Enis</a>, <a href="#">News</a> </span>
+                           
+                        </div>
+                        
+                    </article>
+                </div>
+                <div class="col-md-4">
+                    <article>
+                        <img class="img-thumbnail" src="../../public/img/huawei.jpg" alt="" />
+                        <h2>Cadeaux par Huawei à L'Enis</h2>
+                        <hr class="title-underline">
+                        <p>
+                            Les étudiants et les enseignants de l'ENIS, ont reçu leurs cadeaux de 2020. (Le cadeau est relatif à l'initiative qui a eu lieu du 24 Juin 2020 jusqu'au 30 Novembre 2021) 
+                            Toutes nos félicitations
+                            #ENIS L'Ecole Nationale D'ingenieurs de Sfax Tunisie                        </p>
+                        <div class="post-meta">
+                            <span><i class="fa fa-calendar"></i> May, 2021 </span>
+                            <span><i class="fa fa-tag"></i> <a href="#">Enis</a>, <a href="#">News</a> </span>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-4">
+                    <article>
+
+                        <img class="img-thumbnail" src="../../public/img/part11.jpg"" alt="" />
+                        <h2>Glorification des meilleures Profs dans l'index scientifique</h2>
+                        <hr class="title-underline">
+                        <p>
+                            Honorer les professeurs distingués au niveau mondial dans le classement de l'index scientifique AD
+                            </p>
+                        <div class="post-meta">
+                            <span><i class="fa fa-calendar"></i> June, 2021</span>
+                            <span><i class="fa fa-tag"></i> <a href="#">Enis</a>, <a href="#">News</a> </span>
+                            
+                        </div>
+                        
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- Highlighted Testmonial -->
+     <div class="page-section-no-padding testmonial-container" style="background-image: url(http://placehold.it/1920x1080); background-size: cover;">
+        <div class="testmonial-content ">
+            <div class="container">
+                <div class="text-center">
+                    <p class="margin-0"> "Bienvenue à l'Ecole Nationale d'Ingénieurs de Sfax
+                        <br/> 
+                        <br/>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+   
+
+
+
+
+    <!-- Our Team Creative -->
+    <section class="page-section-no-padding ">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="title-section" id="ourteam "><span class="title-regular">OUR</span><br/>TEAM</h2>
+                    <hr class="title-underline col-centered" />
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-3 padding-0">
+                    <div class="hovereffect">
+                        <img class=" img-responsive" src="../../public/img/ikrame.jpg" alt="" />
+                        <div class="overlay text-center team-content">
+                            <h3 class="info">IKRAM DRIRI</h3>
+                            <p class="info">GI2S1</p>
+                            <a href="https://www.facebook.com/ikrame.dridi" class="info" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="info" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 padding-0">
+                    <div class="hovereffect">
+                        <img class=" img-responsive" src="../../public/img/souhir.jpg" alt="" />
+                        <div class="overlay text-center team-content">
+                            <h3 class="info">SOUHIR NAASSAOUI</h3>
+                            <p class="info">GI2S1</p>
+                            <a href="https://www.facebook.com/profile.php?id=100023481635906" class="info" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="info" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 padding-0">
+                    <div class="hovereffect">
+                        <img class=" img-responsive" src="../../public/img/imene.jpg" alt="" />
+                        <div class="overlay text-center team-content">
+                            <h3 class="info">IMENE CHAOUA</h3>
+                            <p class="info">GI2S1</p>
+                            <a href="https://www.facebook.com/imene.ch.18" class="info" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="info" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 padding-0">
+                    <div class="hovereffect">
+                        <img class=" img-responsive" src="../../public/img/najwa.jpg" alt="" />
+                        <div class="overlay text-center team-content">
+                            <h3 class="info">NAJWA CHEHAIBI</h3>
+                            <p class="info">GI2S1</p>
+                            <a href="https://www.facebook.com/najwa.chehaibi.9/" class="info" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                            
+                            <a href="#" class="info" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Contact Us -->
+    <section class="page-section-no-padding">
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-md-60 col-md-push-6">
+                    <div class="container">
+                        <div class="row ">
+                            <div class="col-md-60 contact-container">
+                                <h2 class="title-section"><span class="title-regular">CONTACT</span><br/>US</h2>
+                                <hr class="title-underline" />
+                                <p>
+                                    Vous pouvez nous contacter
+                                    </p>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="usr" placeholder="NAME">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="email" placeholder="EMAIL">
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="5" id="message" placeholder="MESSAGE"></textarea>
+                                </div>
+                                <button type="button" class="btn btn-default">SEND <i class="fa fa-envelope"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-pull-6 padding-0 ">
+                    <div id="map" class="img-responsive map-style"></div>
+                </div>
+                <section class="page-section-no-padding">
+                    <div class="container-fluid ">
+                        <div class="row ">
+                            <div class="col-md-2 padding-0 map-page-header">
+                                <div id="map" class="img-responsive map-style"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+            </div>
+        </div>
+    </section>
+   <!--<script src="https://maps.googleapis.com/maps/api/js"></script>-->
+   <iframe src="https://www.google.com/maps/d/u/0/embed?mid=14SNjORUgn4OLagBTauVPFlN4j1GBVwnK"  width="1000" height="800"></iframe>   
+   <script src="js/google-map.js"></script>
+ 
+
+
+<%- include('../partials/footer')-%>
+</body>
+
+
+
+

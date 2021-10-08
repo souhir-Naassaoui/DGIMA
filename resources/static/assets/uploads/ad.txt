@@ -1,0 +1,36 @@
+sudo -i
+(passer au root)
+apt-get install apache2
+clear
+service apache2 status
+ctrlc
+gedit /etc/hosts (pour emplacer le dns)
+nktb 127.0.1 www.site1.com
+127.0.1 www.site2.com
+nsjl
+cd/var/www/html (pour heberger)
+mkdir site1
+mkdir site2
+cp index.html site1
+cp index.html site1
+cd site1
+gedit index.html
+cd ..
+kifkif site 2
+cd /etc/apache2(pour creer des hots virtuel)
+cs sites-enabled(availble)
+touch site1.conf
+touch site2.conf
+gedit 000-default.conf
+copier coller fl site1.con w site2 star 12 /site1 w 2
+cd ..
+cd sites-enabled
+a2ensite site1.conf
+a2ensite site1.conf
+service apache2 restart
+service apache2 status
+cd /var/www/html/site1
+gedit index.html
+
+
+

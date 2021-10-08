@@ -1,0 +1,38 @@
+<%- include('../partials/navheader')-%>
+    
+<body>  
+    <br>
+    <br>
+  <section class="page-section padding-30">
+    <div class="container">
+        <div class="row">
+            <!-- Content -->
+            <div class="col-md-9 col-md-push-3 margin-bottom-15" >
+                
+                <% for (var i = 0; i < per.length; i++) { %>
+                <h3 id="coloor"><%= per[i].titre %></h3>
+                <hr class="title-underline">
+                <h4><%= per[i].date %></h4>
+                <p class="lead">
+                    <%= per[i].description %>                </p>
+                <% }; %>
+
+                <button class="btn btn-primary">More Information</button>
+            </div>
+            <!-- Sidebar -->
+            <div class="col-md-3 col-md-pull-9">
+                <aside class="sidebar">
+                    <h4 class="sidebar-header">Categories</h4>
+                    <ul class="nav nav-list">
+                        <li><a href="#"><b class="caret-right"></b> Presse 1</a></li>
+                        <li><a href="#"><b class="caret-right"></b> Presse 2</a></li>
+                        <li><a href="#"><b class="caret-right"></b> Presse 3</a></li>
+                        <li><a href="#"><b class="caret-right"></b> Presse 4</a></li>
+                    </ul>
+                    <hr>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>
+</body>

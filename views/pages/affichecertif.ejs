@@ -1,0 +1,44 @@
+<%- include('../partials/navheader')-%>
+
+<body>  
+    <br>
+    <br>
+
+    <section class="page-section padding-30">
+        <div class="container">
+            <div class="row">
+                <!-- Content -->
+                <div class="col-md-9 col-md-push-3 margin-bottom-15">
+                    <h2>CERTIFICATIONS</h2>
+                    <% for (var i = 0; i < cer.length; i++) { %>
+                    <h3><%= cer[i].titre %></h3>
+                    <hr class="title-underline">
+                    <p class="lead">
+                        <%= cer[i].description %>                </p>
+                    <% }; %>
+    
+                </div>
+                <!-- Sidebar -->
+                <div class="col-md-3 col-md-pull-9">
+                    <aside class="sidebar">
+                        <h4 class="sidebar-header">Categories</h4>
+                        <ul class="nav nav-list">
+                            <li><a href="#"><b class="caret-right"></b> Huawei</a></li>
+                            <li><a href="#"><b class="caret-right"></b> Microsoft</a></li>
+                            <li><a href="#"><b class="caret-right"></b> Toeic</a></li>
+                            <li><a href="#"><b class="caret-right"></b> autre certifications</a></li>
+                        </ul>
+                        <hr>
+                        <h4 class="sidebar-header">About Us</h4>
+                        <p> Enis students have many certifications to go through including those of <span> Huawei, Microsoft </span> ext .. in order to acquire a good profile and a good resumes in front of professional requirements,
+                            they can pass any exam available and be Certified in any domain provided also he/her can pass it multiple time
+                            You can see all certifications available  in our Dashbord here </p>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+        
+</body>
